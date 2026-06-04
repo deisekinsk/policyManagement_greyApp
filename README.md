@@ -1,7 +1,10 @@
-Project Grey APP
-Objective: Insurance Policy Management - Design Patterns and Refactoring
+# Project Grey APP
+## Objective: Insurance Policy Management - Design Patterns and Refactoring
 
-Pattern-oriented package structure
+### Project Structure
+
+```text
+design-patterns-refactoring
 │
 ├── creational
 │   ├── builder
@@ -18,3 +21,4 @@ Pattern-oriented package structure
 │   └── chain-of-responsibility
 │
 └── refactoring
+```
