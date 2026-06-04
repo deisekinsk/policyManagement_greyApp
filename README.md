@@ -4,7 +4,7 @@
 ### Project Structure
 
 ```text
-design-patterns-refactoring
+Project design patterns
 │
 ├── creational
 │   ├── builder
