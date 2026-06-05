@@ -3,26 +3,50 @@
 
 ### Project Structure
 
+<img src="src/main/resources/static/greyAppData.png" width="450">
+
 ```text
-<<<<<<< HEAD
+
 Project design patterns
 =======
-design-patterns-refactoring
->>>>>>> 68b448fee0ea3d947166508b3f9ed4cdcfaf9374
 │
 ├── creational
-│   ├── builder
-│   ├── factory
+│   ├── builder  | Complex object construction |
+│   ├── factory | Insurance object creation |
 │   └── singleton
 │
 ├── structural
-│   ├── adapter
-│   └── facade
+│   ├── adapter  | External service integration |
+│   └── facade  | Simplifies policy issuance workflow |
 │
 ├── behavioral
-│   ├── strategy
-│   ├── observer
-│   └── chain-of-responsibility
+│   ├── strategy | Premium calculation algorithms |
+│   ├── observer | Event notification mechanism |
+│   └── chain-of-responsibility | Validation pipeline |
 │
 └── refactoring
+```
+| Packages   | Responsibility | 
+|------------|---------------|
+| controller | Handles REST API requests |
+| service    | Contains business logic |
+| repository | Database access layer |
+| entity     | Domain and JPA entities |
+| dto        | Request and response objects |
+| exception  | Custom exception handling |
+
+## Main Application Flow
+
+```text
+PolicyController
+        ↓
+PolicyService
+        ↓
+PolicyIssuanceFacade
+        ↓
+CPFValidator
+        ↓
+PremiumCalculationStrategy
+        ↓
+PolicyRepository
 ```
