@@ -20,5 +20,5 @@ public class CustomerRequestDTO {
     private String email;
     private LocalDateTime registerDate;
 
-    private PhysicalAddressDTO addressDTO;
+    private PhysicalAddressDTO addressRequestDTODTO;
 }

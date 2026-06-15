@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table (name = "Policy Customers")
+@Table (name = "TB_CUSTOMER")
 @Builder
 @Getter
 @Setter
@@ -29,17 +29,17 @@ public class Customer {
     @Column
     private LocalDateTime registerDate;
 
-    //data relation
-    @OneToMany(
-            mappedBy = "customer",
-            cascade = CascadeType.ALL
-    )
-    private List<Policy> policyList;
-
-    @OneToOne(
-            mappedBy = "customer",
-            cascade = CascadeType.ALL
-    )
-    private PhysicalAddress physicalAddress;
+//    //data relation
+//    @OneToMany(
+//            mappedBy = "customer",
+//            cascade = CascadeType.ALL
+//    )
+//    private List<Policy> policyList;
+//
+//    @OneToOne(
+//            mappedBy = "customer",
+//            cascade = CascadeType.ALL
+//    )
+//    private PhysicalAddress physicalAddress;
 
 }

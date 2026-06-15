@@ -4,11 +4,10 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table (name = "Policy")
+@Table (name = "TB_POLICY")
 @Builder
 @Getter
 @Setter
@@ -31,15 +30,15 @@ public class Policy {
     @Column
     private LocalDate expiryDate;
 
-    @Column
+    @Enumerated(EnumType.STRING)
     private PolicyType policyType;
-    @Column
+    @Enumerated(EnumType.STRING)
     private PolicyStatus policyStatus;
 
-    //relation
-    @ManyToOne
-    @JoinColumn(name = "customerID")
-    private Customer customer;
+//    //relation
+//    @ManyToOne
+//    @JoinColumn(name = "customerID")
+//    private Customer customer;
 
 
 

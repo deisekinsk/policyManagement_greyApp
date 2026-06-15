@@ -15,7 +15,6 @@ public class PolicyResponseDTO {
     private LocalDate expiryDate;
     private PolicyType policyType;
     private PolicyStatus policyStatus;
-    private Customer customerID;
 
     private CustomerResponseDTO customerResponseDTO;
 }

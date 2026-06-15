@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table (name = "Customers Address")
+@Table (name = "TB_ADDRESS")
 @Builder
 @Getter
 @Setter
@@ -26,7 +26,7 @@ public class PhysicalAddress {
     private String state;
     private String country;
 
-    @OneToOne
-    @JoinColumn(name = "customerID")
-    private Customer customer;
+//    @OneToOne
+//    @JoinColumn(name = "customerID")
+//    private Customer customer;
 }

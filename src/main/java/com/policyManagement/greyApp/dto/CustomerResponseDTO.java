@@ -8,6 +8,6 @@ public class CustomerResponseDTO {
     private String email;
     private LocalDateTime registerDate;
 
-    private PhysicalAddressDTO addressDTO;
+    private PhysicalAddressDTO physicalAddressDTOaddressDTO;
 
 }
