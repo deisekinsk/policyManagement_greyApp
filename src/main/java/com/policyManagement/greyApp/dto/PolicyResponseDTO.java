@@ -3,10 +3,16 @@ package com.policyManagement.greyApp.dto;
 import com.policyManagement.greyApp.entity.Customer;
 import com.policyManagement.greyApp.entity.PolicyStatus;
 import com.policyManagement.greyApp.entity.PolicyType;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PolicyResponseDTO {
     private String policyNumber;
     private BigDecimal policyValue;

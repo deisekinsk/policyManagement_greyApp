@@ -1,7 +1,8 @@
 package com.policyManagement.greyApp.controller;
 
-import com.policyManagement.greyApp.entity.Policy;
-import com.policyManagement.greyApp.repository.PolicyRepository;
+import com.policyManagement.greyApp.dto.PolicyRequestDTO;
+import com.policyManagement.greyApp.dto.PolicyResponseDTO;
+import com.policyManagement.greyApp.service.PolicyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,10 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 
 public class PolicyController {
-        private final PolicyRepository policyRepository;
+
+        private final PolicyService policyService;
 
         @PostMapping
-        public Policy create (@RequestBody Policy policy){
-            return policyRepository.save(policy);
+        public PolicyResponseDTO create (
+                @RequestBody PolicyRequestDTO policyRequestDTO){
+
+            return policyService.createPolicy((policyRequestDTO));
         }
 }
