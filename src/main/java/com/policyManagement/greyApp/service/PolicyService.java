@@ -7,28 +7,50 @@ import com.policyManagement.greyApp.repository.PolicyRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class PolicyService {
 
     private PolicyRepository policyRepository;
 
     @Transactional
-    public PolicyResponseDTO createPolicie
+    public PolicyResponseDTO createPolicy
             (final PolicyRequestDTO policyRequestDTO){
+
         if(policyRepository.existsPoliciesBy(
-                policyRequestDTO.getPolicy())){
-            throw new Exception(
-                    String.format("ERRO: %s !", policyRequestDTO.getPolicy())
+                policyRequestDTO.getPolicyNumber())){
+
+            throw new IllegalArgumentException(
+                    String.format("ERRO: %s !", policyRequestDTO.getPolicyNumber()));
         }
+
+        //set
+        Policy policy = new Policy();
+        policy.setPolicyNumber(policyRequestDTO.getPolicyNumber());
+        policy.setPolicyValue(policyRequestDTO.getPolicyValue());
+        policy.setPolicyAward(policyRequestDTO.getPolicyAward());
+        policy.setEffectiveDate(policyRequestDTO.getEffectiveDate());
+        policy.setExpiryDate(policyRequestDTO.getExpiryDate());
+        policy.setPolicyType(policyRequestDTO.getPolicyType());
+        policy.setPolicyStatus(policyRequestDTO.getPolicyStatus());
+
+
+        //saved
+        Policy saved = policyRepository.save(policy);
+
+        return new PolicyResponseDTO.builder()
+                .policyNumber(saved.getPolicyNumber())
+                .policyValue(saved.getPolicyValue())
+                .policyAward(saved.getPolicyAward())
+                .effectiveDate(saved.getEffectiveDate())
+                .expirateDate(saved.getExpiryDate())
+                .policyType(saved.getPolicyType())
+                .policySatus(saved.getPolicyStatus())
+                .build();
+
     }
 
-    //set
-    Policy policy = new Policy();
-    policy.setPolicy(policyRequestDTO.getPolicy());
 
-
-    //saved
-    Policy saved = policyRepository.save(policy);
 }

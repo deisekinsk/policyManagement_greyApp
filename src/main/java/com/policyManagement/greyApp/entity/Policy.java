@@ -19,15 +19,15 @@ public class Policy {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID policyID;
-    @Column
+    @Column (nullable = false, unique = true)
     private String policyNumber;
-    @Column
+    @Column (nullable = false)
     private BigDecimal policyValue;
-    @Column
+    @Column (nullable = false)
     private BigDecimal policyAward;
-    @Column
+    @Column (nullable = false)
     private LocalDate effectiveDate;
-    @Column
+    @Column (nullable = false)
     private LocalDate expiryDate;
 
     @Enumerated(EnumType.STRING)

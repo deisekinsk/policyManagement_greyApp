@@ -7,4 +7,6 @@ import java.util.UUID;
 
 public interface PolicyRepository
         extends JpaRepository <Policy, UUID> {
+
+        boolean existsPoliciesBy(String policyNumber);
 }
