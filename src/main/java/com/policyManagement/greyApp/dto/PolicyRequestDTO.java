@@ -18,4 +18,6 @@ public class PolicyRequestDTO {
 
     private CustomerRequestDTO customerRequestDTO;
 
+    public Object getPolicy() {
+    }
 }
